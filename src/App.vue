@@ -1,34 +1,32 @@
 <template>
   <div class="app">
-    <post-form  @create="createPost" />
-    <post-list :posts="posts"/>
+    <h2>{{ text }}</h2>
+   
+    <CustomInput v-model="text"/>
+    <ApartmentList :items="apartments" />
   </div>
 </template>
 
 <script>
-import PostForm from "@/components/PostForm";
-import PostList from "@/components/PostList";
+import ApartmentList from "./components/apartment/ApartmentsList.vue";
+import apartments from "./components/apartment/apartments";
+import CustomInput from './components/shared/CustomInput.vue'
 
 export default {
+  name: "App",
+
   components: {
-    PostList,
-    PostForm,
+    ApartmentList,
+    CustomInput,
   },
 
   data() {
     return {
-      posts: [
-        { id: 1, title: "JavaScript", body: "Description" },
-        { id: 2, title: "JavaScript 2", body: "Description 2" },
-        { id: 3, title: "JavaScript 3", body: "Description 3" },
-      ],
+      apartments,
+      text:'',
     };
   },
-  methods: {
-    createPost(post) {
-      this.posts.push(post)
-    },
-  },
+  methods: {},
 };
 </script>
 
@@ -40,6 +38,7 @@ export default {
 }
 
 .app {
+  font-family: Montserrat, sans-serif;
   padding: 20px;
 }
 </style>

@@ -1,0 +1,11 @@
+@import './reset';
+@import './variables';
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&family=Montserrat:wght@400;500;600;700&display=swap');
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
