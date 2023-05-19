@@ -3,6 +3,7 @@
     <h2>{{ text }}</h2>
    
     <CustomInput v-model="text"/>
+    <CustomSelect :items="['name', 'label', 'salary']"/>
     <ApartmentList :items="apartments" />
   </div>
 </template>
@@ -11,13 +12,14 @@
 import ApartmentList from "./components/apartment/ApartmentsList.vue";
 import apartments from "./components/apartment/apartments";
 import CustomInput from './components/shared/CustomInput.vue'
-
+import CustomSelect from './components/shared/CustomSelect.vue'
 export default {
   name: "App",
 
   components: {
     ApartmentList,
     CustomInput,
+    CustomSelect
   },
 
   data() {
