@@ -20,6 +20,8 @@
 @import '../../assets/scss/variables.scss';
 
 .custom-input{
+    max-width: 200px;
+  width: 100%;
     min-height: 40px;
     border: 2px solid $main-color;
     font-size: 18px;

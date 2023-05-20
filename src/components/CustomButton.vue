@@ -22,11 +22,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+@import '../assets/scss/variables.scss';
 button {
-  width: 150px;
-  background-color: black;
-  color: gold;
+  max-width: 150px;
+  width: 100%;
+  background-color: $main-color;
+  color: #fff;
   height: 40px;
+  outline: none;
+  border:none;
+  cursor: pointer;
 }
 </style>

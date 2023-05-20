@@ -1,9 +1,11 @@
 <template>
   <div class="app">
-    <h2>{{ text }}</h2>
+    <!-- <h2>{{ text }}</h2> -->
+   <Container> 
+    <ApartmentFilterForm class="apartments-filter" @submit="logger"/>
+  </Container>
    
-    <CustomInput v-model="text"/>
-    <CustomSelect :items="['name', 'label', 'salary']"/>
+    
     <ApartmentList :items="apartments" />
   </div>
 </template>
@@ -11,15 +13,16 @@
 <script>
 import ApartmentList from "./components/apartment/ApartmentsList.vue";
 import apartments from "./components/apartment/apartments";
-import CustomInput from './components/shared/CustomInput.vue'
-import CustomSelect from './components/shared/CustomSelect.vue'
+import Container from "./components/shared/Container.vue";
+import ApartmentFilterForm from "./components/apartment/ApartmentFilterForm.vue";
 export default {
   name: "App",
 
   components: {
     ApartmentList,
-    CustomInput,
-    CustomSelect
+    ApartmentFilterForm,
+    Container,
+    // CustomSelect
   },
 
   data() {
@@ -28,7 +31,11 @@ export default {
       text:'',
     };
   },
-  methods: {},
+  methods: {
+    logger(value){
+      console.log(value, '----form value')
+    }
+  },
 };
 </script>
 
@@ -42,5 +49,9 @@ export default {
 .app {
   font-family: Montserrat, sans-serif;
   padding: 20px;
+  margin-top: 60px;
+}
+.apartments-filter{
+margin-bottom: 40px;
 }
 </style>
